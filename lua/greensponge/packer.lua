@@ -48,4 +48,8 @@ use {
 
 use 'Olical/conjure'
 
+use 'tpope/vim-dispatch'
+use 'clojure-vim/vim-jack-in'
+use 'radenling/vim-dispatch-neovim'
+
 end)
