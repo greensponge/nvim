@@ -194,6 +194,16 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/greensponge/.local/share/nvim/site/pack/packer/start/vim-jack-in",
     url = "https://github.com/clojure-vim/vim-jack-in"
+  },
+  ["vim-orgmode"] = {
+    loaded = true,
+    path = "/home/greensponge/.local/share/nvim/site/pack/packer/start/vim-orgmode",
+    url = "https://github.com/jceb/vim-orgmode"
+  },
+  ["vim-speeddating"] = {
+    loaded = true,
+    path = "/home/greensponge/.local/share/nvim/site/pack/packer/start/vim-speeddating",
+    url = "https://github.com/tpope/vim-speeddating"
   }
 }
 
