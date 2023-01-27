@@ -89,6 +89,11 @@ _G.packer_plugins = {
     path = "/home/greensponge/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
     url = "https://github.com/hrsh7th/cmp-nvim-lsp"
   },
+  ["cmp-nvim-lsp-signature-help"] = {
+    loaded = true,
+    path = "/home/greensponge/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp-signature-help",
+    url = "https://github.com/hrsh7th/cmp-nvim-lsp-signature-help"
+  },
   ["cmp-nvim-lua"] = {
     loaded = true,
     path = "/home/greensponge/.local/share/nvim/site/pack/packer/start/cmp-nvim-lua",
@@ -99,6 +104,11 @@ _G.packer_plugins = {
     path = "/home/greensponge/.local/share/nvim/site/pack/packer/start/cmp-path",
     url = "https://github.com/hrsh7th/cmp-path"
   },
+  ["cmp-vsnip"] = {
+    loaded = true,
+    path = "/home/greensponge/.local/share/nvim/site/pack/packer/start/cmp-vsnip",
+    url = "https://github.com/hrsh7th/cmp-vsnip"
+  },
   cmp_luasnip = {
     loaded = true,
     path = "/home/greensponge/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
@@ -108,11 +118,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/greensponge/.local/share/nvim/site/pack/packer/start/conjure",
     url = "https://github.com/Olical/conjure"
-  },
-  ["friendly-snippets"] = {
-    loaded = true,
-    path = "/home/greensponge/.local/share/nvim/site/pack/packer/start/friendly-snippets",
-    url = "https://github.com/rafamadriz/friendly-snippets"
   },
   harpoon = {
     loaded = true,
@@ -165,6 +170,11 @@ _G.packer_plugins = {
     path = "/home/greensponge/.local/share/nvim/site/pack/packer/start/rose-pine",
     url = "https://github.com/rose-pine/neovim"
   },
+  ["rust-tools.nvim"] = {
+    loaded = true,
+    path = "/home/greensponge/.local/share/nvim/site/pack/packer/start/rust-tools.nvim",
+    url = "https://github.com/simrat39/rust-tools.nvim"
+  },
   ["telescope.nvim"] = {
     loaded = true,
     path = "/home/greensponge/.local/share/nvim/site/pack/packer/start/telescope.nvim",
@@ -185,6 +195,11 @@ _G.packer_plugins = {
     path = "/home/greensponge/.local/share/nvim/site/pack/packer/start/vim-dispatch-neovim",
     url = "https://github.com/radenling/vim-dispatch-neovim"
   },
+  ["vim-floaterm"] = {
+    loaded = true,
+    path = "/home/greensponge/.local/share/nvim/site/pack/packer/start/vim-floaterm",
+    url = "https://github.com/voldikss/vim-floaterm"
+  },
   ["vim-fugitive"] = {
     loaded = true,
     path = "/home/greensponge/.local/share/nvim/site/pack/packer/start/vim-fugitive",
@@ -204,6 +219,16 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/greensponge/.local/share/nvim/site/pack/packer/start/vim-speeddating",
     url = "https://github.com/tpope/vim-speeddating"
+  },
+  ["vim-vsnip"] = {
+    loaded = true,
+    path = "/home/greensponge/.local/share/nvim/site/pack/packer/start/vim-vsnip",
+    url = "https://github.com/hrsh7th/vim-vsnip"
+  },
+  vimspector = {
+    loaded = true,
+    path = "/home/greensponge/.local/share/nvim/site/pack/packer/start/vimspector",
+    url = "https://github.com/puremourning/vimspector"
   }
 }
 

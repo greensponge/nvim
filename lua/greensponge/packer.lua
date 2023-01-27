@@ -25,25 +25,26 @@ use('mbbill/undotree')
 use('tpope/vim-fugitive')
 
 use {
-	'VonHeikemen/lsp-zero.nvim',
-	requires = {
-		-- LSP Support
-		{'neovim/nvim-lspconfig'},
-		{'williamboman/mason.nvim'},
-		{'williamboman/mason-lspconfig.nvim'},
-
-		-- Autocompletion
-		{'hrsh7th/nvim-cmp'},
-		{'hrsh7th/cmp-buffer'},
-		{'hrsh7th/cmp-path'},
-		{'saadparwaiz1/cmp_luasnip'},
-		{'hrsh7th/cmp-nvim-lsp'},
-		{'hrsh7th/cmp-nvim-lua'},
-
-		-- Snippets
-		{'L3MON4D3/LuaSnip'},
-		{'rafamadriz/friendly-snippets'},
-	}
+    'VonHeikemen/lsp-zero.nvim',
+    requires = {
+        -- LSP Support
+        {'neovim/nvim-lspconfig'},
+        {'williamboman/mason.nvim'},
+        {'williamboman/mason-lspconfig.nvim'},
+        {'simrat39/rust-tools.nvim'},
+        -- Autocompletion
+        {'saadparwaiz1/cmp_luasnip'},
+        {'hrsh7th/nvim-cmp'},
+        {'hrsh7th/cmp-nvim-lsp'},
+        {'hrsh7th/cmp-buffer'},
+        {'hrsh7th/cmp-path'},
+        {'hrsh7th/cmp-nvim-lua'},
+        {'hrsh7th/cmp-nvim-lsp-signature-help'},
+        {'hrsh7th/cmp-vsnip'},
+        {'hrsh7th/vim-vsnip'},
+        -- Snippets
+        {'L3MON4D3/LuaSnip'},
+    }
 }
 
 use 'Olical/conjure'
@@ -53,5 +54,7 @@ use 'clojure-vim/vim-jack-in'
 use 'radenling/vim-dispatch-neovim'
 use 'jceb/vim-orgmode'
 use 'tpope/vim-speeddating'
+use 'puremourning/vimspector'
+use 'voldikss/vim-floaterm'
 
 end)

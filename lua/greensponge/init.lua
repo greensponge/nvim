@@ -1,3 +1,5 @@
 require("greensponge.packer")
 require("greensponge.remap")
 require("greensponge.set")
+require("greensponge.diagnostics")
+require("greensponge.opts")
