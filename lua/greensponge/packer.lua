@@ -47,8 +47,10 @@ use 'clojure-vim/vim-jack-in'
 use 'radenling/vim-dispatch-neovim'
 use {'nvim-orgmode/orgmode', config = function()
     require('orgmode').setup{}
-end
-}
+end}
+use {'akinsho/org-bullets.nvim', config = function()
+    require('org-bullets').setup()
+end}
 use 'tpope/vim-speeddating'
 use 'puremourning/vimspector'
 use 'voldikss/vim-floaterm'
