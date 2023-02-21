@@ -45,7 +45,10 @@ use 'Olical/conjure'
 use 'tpope/vim-dispatch'
 use 'clojure-vim/vim-jack-in'
 use 'radenling/vim-dispatch-neovim'
-use 'jceb/vim-orgmode'
+use {'nvim-orgmode/orgmode', config = function()
+    require('orgmode').setup{}
+end
+}
 use 'tpope/vim-speeddating'
 use 'puremourning/vimspector'
 use 'voldikss/vim-floaterm'
