@@ -25,6 +25,8 @@ use {
         {'williamboman/mason.nvim'},
         {'williamboman/mason-lspconfig.nvim'},
         {'simrat39/rust-tools.nvim'},
+        {'jose-elias-alvarez/null-ls.nvim'},
+        {'MunifTanjim/prettier.nvim'},
         -- Autocompletion
         {'saadparwaiz1/cmp_luasnip'},
         {'hrsh7th/nvim-cmp'},
