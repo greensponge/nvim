@@ -65,7 +65,6 @@ vim.opt.rtp:prepend(lazypath)
 --  You can also configure plugins after the setup call,
 --    as they will be available in your neovim runtime.
 require('lazy').setup({
-  -- NOTE: First, some plugins that don't require any configuration
   'Olical/conjure',
   'ThePrimeagen/harpoon',
   -- Git related plugins
@@ -526,3 +525,13 @@ cmp.setup {
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
+
+-- Harpoon config
+local mark = require("harpoon.mark")
+local ui = require("harpoon.ui")
+vim.keymap.set("n", "<leader>h", mark.add_file, {desc = "Harpoon a file for later navigation. Unique bindings per project."})
+vim.keymap.set("n", "<C-e>", ui.toggle_quick_menu, {desc = "Shows the Harpoon quick menu."})
+vim.keymap.set("n", "<C-h>", function() ui.nav_file(1) end)
+vim.keymap.set("n", "<C-t>", function() ui.nav_file(2) end)
+vim.keymap.set("n", "<C-b>", function() ui.nav_file(3) end)
+vim.keymap.set("n", "<C-s>", function() ui.nav_file(4) end)
