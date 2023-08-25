@@ -67,6 +67,12 @@ vim.opt.rtp:prepend(lazypath)
 require('lazy').setup({
   'Olical/conjure',
   'ThePrimeagen/harpoon',
+  {
+      "andrewferrier/wrapping.nvim",
+      config = function()
+           require("wrapping").setup()
+      end
+  },
   -- Git related plugins
   'tpope/vim-fugitive',
   'tpope/vim-rhubarb',
