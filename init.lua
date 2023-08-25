@@ -73,6 +73,11 @@ require('lazy').setup({
            require("wrapping").setup()
       end
   },
+  {
+      "folke/todo-comments.nvim",
+      dependencies = { "nvim-lua/plenary.nvim" },
+      opts = {}
+  },
   -- Git related plugins
   'tpope/vim-fugitive',
   'tpope/vim-rhubarb',
