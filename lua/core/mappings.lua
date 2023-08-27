@@ -4,6 +4,9 @@ local map = vim.keymap.set
 -- See `:help vim.o`
 -- NOTE: You can change these options as you wish!
 
+-- Go to the directory explorer where current file is located
+map("n", "<leader>pv", vim.cmd.Ex)
+
 -- Set highlight on search
 vim.o.hlsearch = false
 
@@ -67,5 +70,3 @@ map('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous diagnostic mes
 map('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next diagnostic message' })
 map('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Open floating diagnostic message' })
 map('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
-
-
