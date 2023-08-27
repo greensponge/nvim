@@ -4,7 +4,7 @@ This configuration is started from the kickstart template located here: https://
 # How to use
 Clone down this repository to `~/.config/nvim`, pay attention that this is the final path, and not `~/.config/nvim/nvim` or something else. It should then load all the required plugins and settings the next time you launch `neovim`.
 
-For now I use the same bindings for at least `telescope` as `TJ` from `kickstart`. You can check out his video tutorial if you need help learning
+For now I use the same bindings for at least `telescope` as `TJ` from `kickstart`. You can check out his [video tutorial](https://www.youtube.com/watch?v=stqUbv-5u2s) if you need help learning the shortcuts and how to teach yourself what is available.
 
 # Structure
 The main `init.lua` file only requires from the needed modules.
