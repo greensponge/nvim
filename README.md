@@ -16,5 +16,7 @@ lazy.lua
 mappings.lua
 ```
 The `plugins/` directory contains all plugins, each separated by a file. To add a plugin simply create a new file in this folder, returning the required plugin information.
+
 The `lazy.lua` file contains the package manager, which will load each file under `plugins/`.
+
 The `mappings.lua` contains "global" mappings, or rather mappings I don't know where to otherwise put, as they do not belong to a plugin.
