@@ -31,6 +31,7 @@ M.config = function()
   vim.g["conjure#highlight#enabled"] = true
   vim.g["conjure#log#hud#width"] = 0.52
   vim.g["conjure#log#hud#width"] = 0.4
+  vim.g["conjure#log#botright"] = true
   vim.g["conjure#jump_to_latest#enabled"] = true
   vim.g["conjure#log#hud#border"] = "rounded"
 end
