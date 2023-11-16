@@ -5,7 +5,9 @@ local map = vim.keymap.set
 -- NOTE: You can change these options as you wish!
 
 -- Go to the directory explorer where current file is located
-map("n", "<leader>pv", vim.cmd.Ex)
+map("n", "<leader>pv", function()
+  require("oil").open()
+end)
 
 -- Set highlight on search
 vim.o.hlsearch = false
@@ -21,8 +23,8 @@ vim.o.mouse = 'a'
 --  See `:help 'clipboard'`
 vim.o.clipboard = 'unnamedplus'
 
--- Add WSL clipboard support (if Windows)
-if vim.loop.os_uname().sysname == "Windows" then
+-- Add WSL clipboard support
+if vim.fn.has("wsl") == 1 then
   vim.g.clipboard = {
     name = "WslClipboard",
     copy = {
