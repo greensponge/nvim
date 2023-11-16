@@ -5,6 +5,12 @@ return {
         local ui = require("harpoon.ui")
         local map = vim.keymap.set
 
+        require("harpoon").setup({
+            menu = {
+                width = vim.api.nvim_win_get_width(0) - 4,
+            }
+        })
+
         map("n", "<leader>h", mark.add_file,
             { desc = "Harpoon a file for later navigation. Unique bindings per project." })
         map("n", "<C-e>", ui.toggle_quick_menu, { desc = "Shows the Harpoon quick menu." })
