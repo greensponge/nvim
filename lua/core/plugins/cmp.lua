@@ -40,6 +40,9 @@ return {
 			window = {
 				completion = cmp.config.window.bordered({ border = "double" }),
 			},
+			completion = {
+				autocomplete = false,
+			},
 			snippet = {
 				expand = function(args)
 					luasnip.lsp_expand(args.body)
