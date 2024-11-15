@@ -1,7 +1,8 @@
 return {
-  "bluz71/vim-moonfly-colors",
+  "catppuccin/nvim",
+  name = "catppuccin",
   priority = 1000,
   config = function()
-    vim.cmd.colorscheme "moonfly"
-  end,
+    vim.cmd.colorscheme "catppuccin-mocha"
+  end
 }
