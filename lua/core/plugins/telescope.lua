@@ -60,5 +60,7 @@ return {
 		map('n', '<leader>sp', telescope.extensions.projects.projects,
 			{ desc = '[S]earch [P]rojects' })
 		map('n', '<leader>sr', builtin.resume, { desc = '[S]earch [R]ecent' })
+		map('n', '<leader>sk', builtin.keymaps, { desc = '[S]earch [K]ey Maps' })
+		map('n', '<leader>sc', builtin.git_commits, { desc = '[S]earch Git [C]ommits' })
 	end
 }
