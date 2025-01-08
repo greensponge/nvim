@@ -11,7 +11,9 @@ return {
       ['<Down>'] = { 'select_next', 'fallback' },
       ['<Enter>'] = { 'accept', 'fallback' },
     },
-
+    completion = {
+      trigger = { show_on_keyword = false }
+    },
     appearance = {
       use_nvim_cmp_as_default = true,
       nerd_font_variant = 'mono'
