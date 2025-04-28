@@ -95,6 +95,8 @@ vim.keymap.set("n", "<space><space>x", "<cmd>source %<CR>")
 vim.keymap.set("n", "<space>x", ":.lua<CR>")
 -- source current lua selection
 vim.keymap.set("v", "<space>x", ":lua<CR>")
+-- Enable Tab for command-line completion
+vim.api.nvim_set_keymap('c', '<Tab>', '<C-z>', { noremap = true, silent = true })
 
 
 --quickfix
