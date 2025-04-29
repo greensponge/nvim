@@ -38,7 +38,6 @@ return {
 
 		-- Enable telescope fzf native, if installed
 		pcall(telescope.load_extension, 'fzf')
-		telescope.load_extension("projects")
 
 		-- See `:help telescope.builtin`
 		map('n', '<leader>?', builtin.oldfiles, { desc = '[?] Find recently opened files' })
@@ -57,10 +56,13 @@ return {
 		map('n', '<leader>sw', builtin.grep_string, { desc = '[S]earch current [W]ord' })
 		map('n', '<leader>sg', builtin.live_grep, { desc = '[S]earch by [G]rep' })
 		map('n', '<leader>sd', builtin.diagnostics, { desc = '[S]earch [D]iagnostics' })
-		map('n', '<leader>sp', telescope.extensions.projects.projects,
-			{ desc = '[S]earch [P]rojects' })
 		map('n', '<leader>sr', builtin.resume, { desc = '[S]earch [R]ecent' })
 		map('n', '<leader>sk', builtin.keymaps, { desc = '[S]earch [K]ey Maps' })
 		map('n', '<leader>sc', builtin.git_commits, { desc = '[S]earch Git [C]ommits' })
+
+		-- neovim-project specific bind
+		map('n', '<leader>pd', ':NeovimProjectDiscover<CR>', { desc = '[P]roject [D]iscover' })
+		map('n', '<leader>ph', ':NeovimProjectHistory<CR>', { desc = '[P]roject [H]istory' })
+		map('n', '<leader>plr', ':NeovimProjectLoadRecent<CR>', { desc = '[P]roject [L]oad [R]ecent' })
 	end
 }
