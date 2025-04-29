@@ -3,7 +3,8 @@ return {
   version = "*",
   opts = {
     direction = 'float',
-    open_mapping = [[<c-\>]],
+    open_mapping = [[<C-t>]],
+    shell = vim.loop.os_uname().sysname == "Windows_NT" and "powershell" or vim.o.shell, -- Use PowerShell on Windows
   },
   keys = {
     {

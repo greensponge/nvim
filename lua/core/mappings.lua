@@ -102,3 +102,6 @@ vim.api.nvim_set_keymap('c', '<Tab>', '<C-z>', { noremap = true, silent = true }
 --quickfix
 vim.keymap.set("n", "<M-j>", "<cmd>cnext<CR>")
 vim.keymap.set("n", "<M-k>", "<cmd>cprev<CR>")
+
+-- Snacks.dashboard
+vim.keymap.set("n", "<space>dh", ":lua Snacks.dashboard()\r\n", { desc = 'Go to [D]ashboard [H]ome' })
