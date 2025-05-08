@@ -104,16 +104,20 @@ return {
 
 		local capabilities = require('blink.cmp').get_lsp_capabilities()
 
-		mason_lspconfig.setup_handlers {
-			function(server_name)
-				require('lspconfig')[server_name].setup {
-					capabilities = capabilities,
-					on_attach = on_attach,
-					settings = servers[server_name],
-					filetypes = (servers[server_name] or {}).filetypes,
-				}
-			end
-		}
+		-- Configure default settings for all servers
+		vim.lsp.config('*', {
+			capabilities = capabilities,
+			on_attach = on_attach,
+		})
+
+		-- Configure specific servers
+		for server_name, config in pairs(servers) do
+			vim.lsp.config(server_name, {
+				settings = config,
+				filetypes = config.filetypes,
+			})
+		end
+
 		-- Switch for controlling whether you want autoformatting.
 		--  Use :KickstartFormatToggle to toggle autoformatting on or off
 		local format_is_enabled = true
