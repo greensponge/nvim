@@ -5,7 +5,7 @@ return {
     { "nvim-lua/plenary.nvim",                  branch = "master" },
     { "nvim-telescope/telescope.nvim" },
     { "nvim-telescope/telescope-ui-select.nvim" },
-    -- (Optional) If you want MCP available before chat opens:
+    -- If you want MCP available before chat opens:
     { "ravitemer/mcphub.nvim" },
   },
   build = "make tiktoken",
@@ -22,16 +22,17 @@ return {
     -- Highlight groups (tweak to taste)
     local set = vim.api.nvim_set_hl
     local palette = {
-      sep = "#374151",
-      header = "#A3D9FF",
-      model = "#C678DD",
-      prompt = "#61AFEF",
-      tool = "#98C379",
-      res = "#E5C07B",
-      uri = "#56B6C2",
-      sel = "#264F78",
-      ann = "#7F848E",
+      sep    = "#6e738d", -- surface2
+      header = "#f5e0dc", -- rosewater
+      model  = "#cba6f7", -- mauve
+      prompt = "#89b4fa", -- blue
+      tool   = "#a6e3a1", -- green
+      res    = "#f9e2af", -- yellow
+      uri    = "#74c7ec", -- sapphire
+      sel    = "#313244", -- surface0
+      ann    = "#9399b2", -- overlay1
     }
+
     set(0, "CopilotChatSeparator", { fg = palette.sep })
     set(0, "CopilotChatHeader", { fg = palette.header, bold = true })
     set(0, "CopilotChatModel", { fg = palette.model, italic = true })
@@ -89,33 +90,6 @@ return {
         ProjectAware = {
           description = "Answer using project context when possible",
           system_prompt = "You have access to referenced project files. Prefer direct, minimal answers.",
-        },
-      },
-
-      functions = {
-        birthday = {
-          description = "Retrieve birthday info",
-          uri = "birthday://{name}",
-          schema = {
-            type = "object",
-            required = { "name" },
-            properties = {
-              name = {
-                type = "string",
-                enum = { "Alice", "Bob", "Charlie" },
-                description = "Person's name",
-              },
-            },
-          },
-          resolve = function(input)
-            return {
-              {
-                uri = "birthday://" .. input.name,
-                mimetype = "text/plain",
-                data = input.name .. " birthday info",
-              },
-            }
-          end,
         },
       },
     }
