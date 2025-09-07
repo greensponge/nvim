@@ -2,23 +2,13 @@ return {
   "CopilotC-Nvim/CopilotChat.nvim",
   event = "VeryLazy",
   dependencies = {
-    { "nvim-lua/plenary.nvim",                  branch = "master" },
+    { "nvim-lua/plenary.nvim",        branch = "master" },
     { "nvim-telescope/telescope.nvim" },
-    { "nvim-telescope/telescope-ui-select.nvim" },
     -- If you want MCP available before chat opens:
     { "ravitemer/mcphub.nvim" },
   },
   build = "make tiktoken",
   init = function()
-    -- Telescope ui-select
-    local ok, telescope = pcall(require, "telescope")
-    if ok then
-      telescope.setup({
-        extensions = { ["ui-select"] = require("telescope.themes").get_dropdown({}) },
-      })
-      pcall(telescope.load_extension, "ui-select")
-    end
-
     -- Highlight groups (tweak to taste)
     local set = vim.api.nvim_set_hl
     local palette = {
@@ -56,18 +46,6 @@ return {
     })
   end,
   opts = function()
-    local system_prompt = table.concat({
-      "Before answering, work through this step-by-step:",
-      "",
-      "1. UNDERSTAND: What is the core question being asked?",
-      "2. ANALYZE: What are the key factors/components involved?",
-      "3. REASON: What logical connections can I make?",
-      "4. SYNTHESIZE: How do these elements combine?",
-      "5. CONCLUDE: What is the most accurate/helpful response?",
-      "",
-      "Now answer:",
-    }, "\n")
-
     return {
       model = "gpt-4.1",
       temperature = 0.1,
@@ -75,21 +53,80 @@ return {
       window = { layout = "vertical", width = 0.45 },
 
       prompts = {
-        AlwaysGuide = {
+        ImprovedPromptResults = {
           description = "AlwaysGuide system prompt",
-          system_prompt = system_prompt,
+          system_prompt = [[
+Before answering, work through this step-by-step:
+1. UNDERSTAND: What is the core question being asked?
+2. ANALYZE: What are the key factors/components involved?
+3. REASON: What logical connections can I make?
+4. SYNTHESIZE: How do these elements combine?
+5. CONCLUDE: What is the most accurate/helpful response?
+
+Now answer:
+          ]]
         },
-        ExplainSelection = {
-          description = "Explain current selection",
-          prompt = "#selection Explain this code",
-        },
-        ReviewBuffer = {
-          description = "Review whole buffer for issues",
-          prompt = "#buffer Review this file for bugs, edge cases and improvements.",
-        },
-        ProjectAware = {
-          description = "Answer using project context when possible",
-          system_prompt = "You have access to referenced project files. Prefer direct, minimal answers.",
+        OptimizedPromptConsult = {
+          description = "Prompt engineering consultant: optimize a prompt using best practices",
+          prompt = [[
+{input}
+
+You are a senior prompt engineering consultant specializing in LLM optimization, with expertise in the current model's latest best practices and techniques. Your role is to transform prompts into high-performance, structured instructions that maximize LLM's effectiveness.
+
+<objective>
+Analyze the provided prompt and create an optimized version that incorporates proven prompt engineering techniques including clear role definition, XML structure, multishot examples, and measurable success criteria.
+</objective>
+
+<methodology>
+<thinking>
+First, analyze the current prompt structure step-by-step:
+1. Identify the core task and intended outcome
+2. Assess clarity and specificity of instructions
+3. Evaluate structure and organization
+4. Check for missing elements (examples, output format, success criteria)
+5. Note opportunities for improvement using best practices
+</thinking>
+
+Follow this systematic approach:
+1. **Research Phase**: Gather relevant best practices from Anthropic documentation (use WebFetch tool for current guidelines)
+2. **Analysis Phase**: Identify specific issues and improvement opportunities
+3. **Design Phase**: Apply best practices including:
+   - Clear role definition and context
+   - XML tags for structure
+   - Specific, measurable success criteria
+   - Multishot examples where applicable
+   - Chain-of-thought guidance for complex tasks
+4. **Validation Phase**: Review against quality criteria
+</methodology>
+
+<output_format>
+Provide your response in this exact structure:
+
+<analysis>
+[Your analysis of the current prompt's strengths and weaknesses]
+</analysis>
+
+<improved_prompt>
+[The optimized prompt using best practices]
+</improved_prompt>
+
+<improvements_applied>
+[List of specific improvements made and why]
+</improvements_applied>
+
+<success_criteria>
+[Measurable criteria for evaluating the improved prompt's effectiveness]
+</success_criteria>
+</output_format>
+
+<quality_standards>
+- Instructions must be specific and actionable
+- Structure should use XML tags for clarity
+- Include relevant examples when beneficial
+- Define clear success metrics
+- Optimize for the intended use case and audience
+</quality_standards>
+          ]],
         },
       },
     }
