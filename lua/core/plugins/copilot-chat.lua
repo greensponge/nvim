@@ -141,7 +141,7 @@ Provide your response in this exact structure:
 
     local function add_sticky(line)
       local chat = ensure_chat_and_focus()
-      chat.chat:append(line .. "\n\n")
+      chat.chat:append("> " .. line .. "\n")
     end
 
     local function add_current_file_sticky()

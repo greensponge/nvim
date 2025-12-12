@@ -4,7 +4,8 @@ return {
   opts = {
     direction = 'float',
     open_mapping = [[<C-t>]],
-    shell = vim.loop.os_uname().sysname == "Windows_NT" and "powershell" or vim.o.shell, -- Use PowerShell on Windows
+    shell = (vim.fn.has('win32') == 1 or vim.fn.has('win64') == 1) and
+        (vim.fn.executable('pwsh') == 1 and 'pwsh' or 'powershell') or vim.o.shell, -- Use PowerShell only on native Windows
   },
   keys = {
     {
