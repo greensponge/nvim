@@ -3,7 +3,7 @@ local map = vim.keymap.set
 -- Fuzzy Finder (files, lsp, etc)
 return {
 	'nvim-telescope/telescope.nvim',
-	branch = '0.1.x',
+	tag = 'v0.2.0',
 	dependencies = {
 		'nvim-lua/plenary.nvim',
 		-- Fuzzy Finder Algorithm which requires local dependencies to be built.
