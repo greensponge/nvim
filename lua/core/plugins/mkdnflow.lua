@@ -2,13 +2,22 @@ return {
 	'jakewvincent/mkdnflow.nvim',
 	config = function()
 		require('mkdnflow').setup({
-			-- Config goes here; leave blank for defaults
 			to_do = {
-				symbols = { ' ', '-', 'x' },
-				update_parents = true,
-				not_started = ' ',
-				in_progress = '-',
-				complete = 'x'
+				statuses = {
+					{
+						name = 'not_started',
+						marker = ' ',
+					},
+					{
+						name = 'in_progress',
+						marker = '-',
+					},
+					{
+						name = 'complete',
+						marker = { 'X', 'x' },
+					},
+				},
+				status_propagation = { up = true, down = true },
 			},
 		})
 	end
